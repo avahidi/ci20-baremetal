@@ -1,3 +1,34 @@
-This is repository contains a number of bare/metal experiments for the MIPS Creator CI20 development board.
 
+First experiment: turn that red LED off!
+
+The LED red on the CI20 is controlled by GPIO (general-purpose input/output) pins of the CPU.
+
+Requirements:
+
+1. mips-sde-elf GCC compiler
+2. Linux mkimage utility
+3. QEMU-mipsel (optional)
+
+
+Building:
+
+To build the project, simply execute "make".
+
+
+Running (from u-boot console):
+
+1. power the board
+2. when you see "Hit any key to stop autoboot", press enter
+3. enter "loads"
+4. copy-paste contents of build/exp1.srec into the u-boot console
+5. enter "go 0x8001000"
+
+
+Running (from SD card):
+
+1. insert a working Linux SD card for CI20
+2. backup the boot/vmlinux.img file
+3. copy build/exp1.img over boot/vmlinux.img
+4. safely eject the SD card and insert it into the CI 20
+5. power the board!
 
