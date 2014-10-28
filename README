@@ -21,7 +21,7 @@ Some notable experiments are:
 * exp2 - code to periodically turn the LED on and off
 * exp3 - same as exp2, but the code is now organized in a number of functions
 * exp4 - same as exp2, but the code is spread across multiple files. Uses RTC timer for the blinking time
-
+* exp_uart - uses UART to communicate with the board. Also, introduces C...
 
 
 
