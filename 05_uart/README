@@ -1,0 +1,4 @@
+
+UART experiment: use the UART to communicate with the board...
+
+This experiment also introduced using C in combination with assembler.

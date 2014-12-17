@@ -1,0 +1,4 @@
+
+First experiment: turn that red LED off!
+
+The LED red on the CI20 is controlled by GPIO (general-purpose input/output) pins of the CPU.
