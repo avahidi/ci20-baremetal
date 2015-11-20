@@ -1,13 +1,10 @@
 CI20-baremetal
 ==============
 
-This repository contains a number of bare-metal experiments for the MIPS Creator CI20 development board:
+This repository contains a number of bare-metal experiments for the `MIPS Creator  CI20`_ development board, inspired by the "`Baking Pi - Operating Systems Development`_ " course by Alex Chadwick at University of Cambridge:
 
-http://elinux.org/MIPS_Creator_CI20
-
-The experiments were inspired by the "Baking Pi - Operating Systems Development" course by Alex Chadwick at University of Cambridge:
-
-http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html
+.. _MIPS Creator CI20: http://elinux.org/MIPS_Creator_CI20
+.. _Baking Pi - Operating Systems Development: http://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/os/index.html
 
 
 
@@ -27,33 +24,33 @@ Some notable experiments are
 USAGE
 -----
 
-*REQUIREMENTS*
-
+REQUIREMENTS
+~~~~~~~~~~~~
 1. A native GCC toolchain and utilities (apt-get install gcc).
-2. A GCC cross-compiler for MIPS (https://sourcery.mentor.com/GNUToolchain/subscription3130?lite=MIPS ).
+2. A GCC cross-compiler for MIPS (I use `this one`_).
 3. QEMU for little endian MIPS (apt-get install qemu-system-mips).
 4. The Linux mkimage utility (apt-get install u-boot-tools).
 5. A serial client (apt-get install minicom).
 
-*BUILDING AND UPLOADING*
+.. _this one: https://sourcery.mentor.com/GNUToolchain/subscription3130?lite=MIPS
+
+BUILDING AND UPLOADING
+~~~~~~~~~~~~~~~~~~~~~~
 
 From project root, execute
+::
 
-```
-make
+    make
 
-```
-
-The generated files are in the "build" sub-directory. You have two options for uploading them to the device:
-
+The generated files are in the "build" sub-directory. You have two options for getting your code into the device:
 
 Temporary (from u-boot console):
 
-1. power the board
-2. when you see "Hit any key to stop autoboot", press enter
-3. enter "loads"
-4. copy-paste contents of build/<name>.srec into the u-boot console
-5. enter "go 0x8001000"
+#. connect to the CI20 serial port and power up the board
+#. when you see "Hit any key to stop autoboot", press enter
+#. enter "loads"
+#. copy-paste contents of build/<name>.srec into the u-boot console
+#. enter "go 0x8001000"
 
 
 Permanent (from SD card):

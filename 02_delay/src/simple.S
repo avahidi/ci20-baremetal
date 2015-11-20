@@ -1,13 +1,17 @@
     .text
     .set noat
 
+    // note: since not using automatic re-ordering is so hard,
+    // from now and on we will simply use that and stop caring
+    // about delay slots and all that stuff :)
+
 boot:
 
     // set up the GPIO pin as before
     li $1, 0x10010500
     li $2, (1 << 15)    //  PORT F bit 15
-    sw $2, 0x18($1)       // PFINTC clear => its not interrupt
-    sw $2, 0x24($1)       // PFMSKS set   => its gpio
+    sw $2, 0x18($1)       // PFINTC clear => no interrupts for this pin
+    sw $2, 0x24($1)       // PFMSKS set   => its a gpio
     sw $2, 0x38($1)       // PFPAT1 clear => its output
 
 
