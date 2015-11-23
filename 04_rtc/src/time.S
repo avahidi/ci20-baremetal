@@ -1,8 +1,7 @@
 
 
-#include <mips/asm.h>
-#include <mips/regdef.h>
-#include <mips/cpu.h>
+#include <sys/asm.h>
+#include <sys/regdef.h>
 
     .text
     .set noat

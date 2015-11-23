@@ -4,7 +4,8 @@
 #
 
 TARGET ?=CI20
-CROSS_COMPILE ?= mips-sde-elf-
+#CROSS_COMPILE ?= mips-sde-elf-
+CROSS_COMPILE = mips-linux-gnu-
 
 # tell GCC this is bare-metal little-endian code
 CFLAGS += -mel
@@ -19,8 +20,6 @@ DIR += src src/cpu src/board/$(TARGET)
 SRC += $(foreach d,$(DIR),$(wildcard $(d)/*.c))
 SRC += $(foreach d,$(DIR),$(wildcard $(d)/*.S))
 CFLAGS += $(foreach d,$(DIR),-I$(d)$)
-
-
 
 # this should work for experiments with single and multiple boards
 ifeq (,$(wildcard src/board))
@@ -80,7 +79,7 @@ endif
 # talk to the board...
 comm:
 	$(COMM)	
-	
+
 #
 
 build:

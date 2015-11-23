@@ -1,7 +1,7 @@
 
 
-#include <mips/asm.h>
-#include <mips/regdef.h>
+#include <sys/asm.h>
+#include <sys/regdef.h>
 
 
     .section .boot

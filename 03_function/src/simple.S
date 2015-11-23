@@ -1,7 +1,10 @@
 
 
-#include <mips/asm.h>
-#include <mips/regdef.h>
+// these header files come with the compiler and contain
+// a lot of definitions and macro that will make our code
+// cleaner and more readable:
+#include <sys/asm.h>
+#include <sys/regdef.h>
 
 
     .text
